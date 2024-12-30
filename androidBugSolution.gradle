@@ -1,0 +1,21 @@
+Ensure that your `build.gradle` files (both the project-level and module-level ones) specify an Android SDK version that is actually installed.
+
+**Incorrect `build.gradle` (module-level):**
+```gradle
+android {
+    compileSdkVersion 33 // May not be installed
+    // ... other configurations
+}
+```
+
+**Corrected `build.gradle` (module-level):**
+```gradle
+android {
+    compileSdkVersion 31 // Or a version that is installed
+    // ... other configurations
+}
+```
+
+**Also check your project-level `build.gradle` file for consistent SDK versions.**
+
+After making changes to the `build.gradle` files, run `expo prebuild` and then try building again with `expo build:android`.  If necessary, clean your build cache (`expo prebuild --clean`).  You can also try syncing your project: `./gradlew clean` and `./gradlew assembleRelease`. 
