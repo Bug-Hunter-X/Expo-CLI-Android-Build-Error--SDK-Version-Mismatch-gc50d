@@ -1,0 +1,1 @@
+This error typically occurs when there's a mismatch between the Android SDK version specified in your project's `gradle` files and the actual SDK version installed on your system. Expo CLI might be trying to use an SDK version that doesn't exist or is incompatible.
